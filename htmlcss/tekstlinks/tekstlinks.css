@@ -1,18 +1,20 @@
-html{
-
-    height: 10vh;
-    width: 100%;
+body{
+    background-color: gray !important;
+    height: 95vh;
+    width: 95%;
     display: flex;
-    flex-direction: comlumn;
-    align-items:center;
+    flex-direction: column;
+    align-content:center;
     justify-content: center;
     
 
 }
 
 p{
-
-    background-color: lawngreen;
+    padding: 10px;
+    background-color: greenyellow;
     border-radius:20px;
     border:solid 2px black;
 }
+
+
