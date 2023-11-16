@@ -8,7 +8,7 @@ $l5 = readline("voer een vijfde leeftijd in: ");
 
 $aantalreadlines = "5";
 
-$leeftijden = array("$l1", "$l2", "$l3", "$l4", "$l5");
+$leeftijden = array($l1, $l2, $l3, $l4, $l5);
 $i = "0";
 $o = "0";
 foreach ($leeftijden as $value){
