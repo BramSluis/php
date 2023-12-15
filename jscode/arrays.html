@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="arrays.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+
+    <div id="input">
+        voeg auto toe: <input type="text" id="autonaam" placeholder="auto">
+        voeg de prijs toe:  <input type="text" id="autoprijs" placeholder="prijs">
+        <button type="button" id="add" onclick="inputarray()">toevoegen</button>
+    </div>
+  
+    <div id="output"></div>  
+
+    <div id="prijstotaal"></div>
+    
+    
+    <script>
+        let auto = ["saab",  "BMW", "volvo"]; 
+        let prijs = [10000, 25000, 12500]; 
+        
+        
+      
+
+        function inputarray(){
+            let autonaam = document.getElementById("autonaam").value ;
+            let autoprijs = parseFloat(document.getElementById("autoprijs").value);
+    
+             
+            auto.push(autonaam);
+            prijs.push(autoprijs);
+
+            console.log(auto +" "+ prijs);
+            
+            geefautos()
+        
+        }
+
+        function geefautos(){
+            let html = ""; 
+            for (let i = 0; i < auto.length; i++) {
+                html += "de "+ auto[i]+ " kost \u20ac "+prijs[i] + "<br>";
+            }
+            document.getElementById("output").innerHTML=html
+        }
+
+        // function geefprijzen(){
+        //     let html = ""; 
+        //     for (let i = 0; i < prijs.length; i++) {
+        //         html += prijs[i] + "<br>";
+        //     }
+        //     document.getElementById("output").innerHTML=html
+        // }
+
+        
+        geefautos(); 
+        let sum= 0; 
+            
+            function geeftotaalprijs(){
+            let totaalprijs= "";
+            for (let i = 0; i < prijs.length; i++ ) {
+            sum += prijs[i];
+        }
+        document.getElementById("prijstotaal").innerHTML=sum;
+            
+            }
+            geefautos();
+            geeftotaalprijs();
+        
+            
+    </script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="arrays.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="input">
+        voeg auto toe: <input type="text" id="autonaam" placeholder="auto">
+        voeg de prijs toe:  <input type="text" id="autoprijs" placeholder="prijs">
+        <button type="button" id="add" onclick="inputarray()">toevoegen</button>
+    </div>
+
+    <div id="output"></div>  
+
+    <div id="prijstotaal"></div>
+
+    <script>
+        let auto = ["saab", "BMW", "volvo"]; 
+        let prijs = [10000, 25000, 12500]; 
+        let sum = 0;
+
+        function inputarray() {
+            let autonaam = document.getElementById("autonaam").value;
+            let autoprijs = parseFloat(document.getElementById("autoprijs").value);
+
+            auto.push(autonaam);
+            prijs.push(autoprijs);
+
+            geefautos();
+            geeftotaalprijs();
+        }
+
+        function geefautos() {
+            let html = ""; 
+            for (let i = 0; i < auto.length; i++) {
+                html += "de " + auto[i] + " kost \u20ac" + prijs[i] + "<br>";
+            }
+            document.getElementById("output").innerHTML = html;
+        }
+
+        function geeftotaalprijs() {
+            sum = 0;
+            for (let i = 0; i < prijs.length; i++) {
+                sum +=  prijs[i];
+            }
+            document.getElementById("prijstotaal").innerHTML ="de totaalprijs = \u20ac" + sum;
+        }
+
+        geefautos(); 
+        geeftotaalprijs();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="inputvalue.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        
+
+
+
+
+    <div >
+        <div id="output">-</div>
+        <form id="input" method="post" onsubmit="return false">
+
+            <input type="text" value="" id="name" placeholder="voornaam">
+            <input type="text" value="" id="lastname" placeholder="achternaam">  
+            <input type="text" value="" id="agenow" placeholder="huidige leeftijd">
+            <input type="text" value="" id="ageadd" placeholder="toe te voegen jaren">
+            <button onclick="add()">Submit</button>
+            
+        </form>
+    </div>  
+        <script> 
+            let output = document.getElementById("output"); 
+            function add() {
+                let firstname = document.getElementById("name") ;
+                let lastname = document.getElementById("lastname");
+                let combined = firstname.value + " " + lastname.value;
+                let agenow = document.getElementById("agenow").value;
+                let ageadd = document.getElementById("ageadd").value;
+
+                output.innerHTML = " hallo ik ben " +  combined + " en over "+ ageadd + " jaar ben ik " + (parseInt(agenow) + parseInt(ageadd)) + " jaar" ;
+            } 
+            
+            
+        </script>
+    </body>
+</html>

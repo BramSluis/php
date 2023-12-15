@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="geeftafel"> geef getal voor tafel: <input type="text" id="input" placeholder="tafel"> geef getal voor hoever de tafel moet gaan <input type="text" id="limit" placeholder="hoeveel keer?"> <button onclick="tafels()"> geef de tafel</button> </div>
+
+    <div id="output"></div>
+
+    
+
+    <script>
+        
+        function tafels(){
+            let tafel = document.getElementById("input").value;
+            let limit = document.getElementById("limit").value;
+            let outputhtml = ""
+            
+            for(let i=0; i <=limit; i++){
+
+                outputhtml += `${i} * ${tafel} = ${i *parseInt(tafel) }<br>`;   
+
+            }
+                document.getElementById("output").innerHTML = outputhtml;
+        }
+    </script>
+</body>
+</html>

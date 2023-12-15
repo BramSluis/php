@@ -1,0 +1,12 @@
+body{
+display: flex;
+width: 95%;
+height: 95vh;
+flex-direction: column;
+}
+
+#input{
+display: flex;
+flex-direction: column;
+width: 300px;
+}
