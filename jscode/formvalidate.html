@@ -13,16 +13,16 @@
       <form method="post" id="myform">
         <div id="inputvelden">
           <span class="label">*Naam</span>
-          <input type="text" id="voornaam" required onkeyup="naamcheck()"/>
+          <input type="text" id="voornaam" required/>
           <input type="text" id="tv" />
-          <input type="text" id="achternaam" required onkeyup="anaamcheck()" /><br />
+          <input type="text" id="achternaam" required  /><br />
 
           <span class="label">*Adres</span>
           <input type="text" id="adres" required /><br />
 
           <span class="label">*PC Plaats</span>
-          <input type="text" id="postcode" required />
-          <input type="text" id="plaats" required /><br />
+          <input type="text" id="postcode" required  />
+          <input type="text" id="plaats" required  /><br />
 
           <span class="label">Telefoon</span>
           <input type="text" id="tel" /><br />
@@ -43,7 +43,7 @@
         ><br />
         <span class ="label">geboortedatum</span>
         <input type="text" id="geboortedatum" />
-        <input type="button" id="submit" value="verstuur" name="button" />
+        <input type="button" id="submit" value="verstuur" name="button" onclick="errorform()" />
       </form>
     </div>
     <h1>foutmelding</h1>
