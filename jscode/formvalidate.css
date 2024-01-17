@@ -1,0 +1,11 @@
+#form,#results{
+    border: 1px solid black;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.label{
+    display: inline-block;
+    width: 200px;
+}
+

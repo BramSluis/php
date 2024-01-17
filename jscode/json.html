@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        let agroups = ["sd1c", "sd1a", "sd1b"]
+        let studenten= [
+        {"voornaam": "Duncan","tv":"van","achternaam":"Keulen", "id":agroups[0]},
+        {"voornaam": "Nikki", "tv": "", "achternaam":"Nip",  "id":agroups[0]},
+        {"voornaam": "Sven", "tv": "van der", "achternaam":"Velde","id":agroups[0]},
+        {"voornaam": "Jesper", "tv": "", "achternaam":"Slijkhuis","id":agroups[0]},
+        {"voornaam": "Olle", "tv":"","achternaam":"Kuiper","id": agroups[2]}
+
+        ];
+
+        
+        let output = "";
+        for(let i = 0; i<studenten.length; i++){
+            output += "Voornaam: " + studenten[i].voornaam+ " Tussenvoegsel:" + studenten[i].tv + "Achternaam: "+ studenten[i].achternaam+"ID: "+studenten[i].id+ "<br>";
+        }
+        document.getElementById("output").innerHTML = output;
+
+    </script>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // niet ass
+
+        let studenten1 = [
+            ["jan", "", "jansen"],
+            ["piet", "de", "grote"]
+        ];
+
+        console.log("de naam van de tweede persoon is: " +studenten1[1][0]+ " "+ studenten1[1][1] + " "+ studenten1[1][2]);
+
+        // wel ass
+
+        let studenten = [
+            {"voornaam": "jan", "tv": "", "achternaam": "jansen"},
+            {"voornaam": "piet", "tv": "de", "achternaam": "grote"}
+        ];
+        let student = studenten[1]
+        console.log("de naam van de tweede persoon is: " +student.voornaam + " " + student.tv+ " "+ student.achternaam );
+    </script>
+</body>
+</html> -->
+

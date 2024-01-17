@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="formvalidate.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test formulier</title>
+  </head>
+  <body>
+    <div id="form">
+      <h1>test formulier</h1>
+
+      <form method="post" id="myform">
+        <div id="inputvelden">
+          <span class="label">*Naam</span>
+          <input type="text" id="voornaam" required onkeyup="naamcheck()"/>
+          <input type="text" id="tv" />
+          <input type="text" id="achternaam" required onkeyup="anaamcheck()" /><br />
+
+          <span class="label">*Adres</span>
+          <input type="text" id="adres" required /><br />
+
+          <span class="label">*PC Plaats</span>
+          <input type="text" id="postcode" required />
+          <input type="text" id="plaats" required /><br />
+
+          <span class="label">Telefoon</span>
+          <input type="text" id="tel" /><br />
+
+          <span class="label">E-mail</span>
+          <input type="text" id="email" /><br />
+
+          <input type="radio" id="manchoice" name="geslacht" value="man" />
+          <label for="manchoice">Man</label><br />
+          <input type="radio" name="geslacht" id="vrouwchoice" value="man" />
+          <label for="vrouwchoice">Vrouw</label><br />
+        </div>
+        <label for="bands">Band: </label>
+        <select id="bands">
+          <option value="System Of A Down">System Of A Down</option>
+          <option value="Slipknot">Slipknot</option>
+          <option value="Pantera">Pantera</option></select
+        ><br />
+        <span class ="label">geboortedatum</span>
+        <input type="text" id="geboortedatum" />
+        <input type="button" id="submit" value="verstuur" name="button" />
+      </form>
+    </div>
+    <h1>foutmelding</h1>
+    <div id="results">
+      
+      
+    </div>
+    <script src="formvalidate.js"></script>
+  </body>
+</html>

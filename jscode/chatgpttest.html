@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        let studenten = [
+            {"voornaam": "Duncan", "tv": "van", "achternaam": "Keulen", "id": "1"},
+            {"voornaam": "Nikki", "tv": "", "achternaam": "Nip", "id": "1"},
+            {"voornaam": "Sven", "tv": "van der", "achternaam": "Velde", "id": "1"},
+            {"voornaam": "Jesper", "tv": "", "achternaam": "Slijkhuis", "id": "1"},
+            {"voornaam": "Olle", "tv": "", "achternaam": "Kuiper", "id": "1"}
+        ];
+
+        let output = "";
+        for (let i = 0; i < studenten.length; i++) {
+            output += "Voornaam: " + studenten[i].voornaam + ", Tussenvoegsel: " + studenten[i].tv + ", Achternaam: " + studenten[i].achternaam + "<br>";
+        }
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>
