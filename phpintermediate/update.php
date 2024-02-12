@@ -9,17 +9,17 @@ $select = $conn->query("SELECT * FROM artist WHERE id=$id");
 $row = $select->fetch_assoc();
 ?>
 <?php
-if (isset($_POST['submit'])) {
+if (isset($_POST['verstuur'])) {
     
     // Waardes van formulier ophalen en aan variabele geven
     $name = $_POST['name'];
     $country = $_POST['country'];
     $jaar = $_POST['jaar'];
     // UPDATE query maken om geüpdatete data van een rij te kunnen verwerken in database
-    $query = "UPDATE artist SET name = '".$name."',
-                            country = '".$country."',
-                            jaar = '".$jaar."'
-                            WHERE id=$id";
+    $query = "UPDATE artist SET `name` = '".$name."',
+    country = '".$country."',
+    jaar = '".$jaar."'
+    WHERE id=$id";
     // Statement voorbereiden
     $stmt = $conn->prepare($query);
     // Query uitvoeren
@@ -46,10 +46,11 @@ if (isset($_POST['submit'])) {
     <br>
     <input type="text" name="jaar" onkeyup="errorform()" id="jaar" value="<?php echo $row['jaar'];?>"> 
     <br>
-   <button type="submit" id="verstuur" disabled>submit</button> <br>
+   <!-- <button type="submit" id="verstuur" disabled>submit</button> <br> -->
+   <input type="submit" value="submit" id="verstuur" name="verstuur" disabled>
 </form>
 
-<div id="results">"" </div> 
+<div id="results"></div> 
     
 </body>
 </html>

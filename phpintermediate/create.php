@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
     $country = $_POST['country'];
     $jaar = $_POST['jaar'];
 
-    $query = "INSERT INTO artist (name, country, jaar)
+    $query = "INSERT INTO artist (`name`, country, jaar)
     VALUES('$name', '$country', '$jaar')";
 
     $conn->execute_query($query);

@@ -46,10 +46,12 @@ function errorform() {
   errorListHTML += "</ul>";
 
   document.getElementById("results").innerHTML = errorListHTML;
+  document.getElementById("results").style.border = "1px solid red";
+  document.getElementById("results").style.color ="red";
 
   if (errormsg.length === 0) {
     document.getElementById("verstuur").disabled = false;
   } else {
-    document.getElementById("verstuur").disabled = true;hoi
+    document.getElementById("verstuur").disabled = true;
   }
 }
