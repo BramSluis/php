@@ -17,20 +17,26 @@
 // }
 
 function errorform() {
+  let elvn = document.getElementById("voornaam").value;
+  let elan = document.getElementById("achternaam").value;
+  let elad = document.getElementById("adres").value;
+  let elpo = document.getElementById("postcode").value;
+  let elpl = document.getElementById("plaats").value;
+
   let errormsg = new Array();
-  if (document.getElementById("voornaam").value.length < 2) {
+  if (elvn.length < 2) {
     errormsg.push("uw voornaam moet minimaal 2 karakters bevatten");
   }
-  if (document.getElementById("achternaam").value.length < 2) {
+  if (elan.length < 2) {
     errormsg.push("uw achternaam moet minimaal 2 karakters bevatten");
   }
-  if (document.getElementById("adres").value.length < 2) {
+  if (elad.length < 2) {
     errormsg.push("uw adres moet minimaal 2 karakters bevatten");
   }
-  if (document.getElementById("postcode").value.length < 6) {
+  if (elpo.length < 6) {
     errormsg.push("uw postcode moet minimaal 6 karakters bevatten");
   }
-  if (!document.getElementById("plaats").value.length < 2) {
+  if (elpl.length < 2) {
     errormsg.push("uw plaatsnaam moet minimaal 2 karakters bevatten");
   }
 
