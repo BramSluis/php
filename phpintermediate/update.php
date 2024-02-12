@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -43,12 +44,12 @@ if (isset($_POST['submit'])) {
     <br>
     <input type="text" name="country"id="country" value="<?php echo $row['country'];?>"
     <br>
-    <input type="text" name="jaar" id="jaar" value="<?php echo $row['jaar'];?>"> 
+    <input type="text" name="jaar" onkeyup="errorform()" id="jaar" value="<?php echo $row['jaar'];?>"> 
     <br>
-    <input type="submit" name="submit" value="Updaten"> <br>
+   <button type="submit" id="verstuur" disabled>submit</button> <br>
 </form>
 
-<div id="results">"yabadabadoo" </div> 
+<div id="results">"" </div> 
     
 </body>
 </html>

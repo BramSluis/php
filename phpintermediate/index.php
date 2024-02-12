@@ -16,7 +16,7 @@ include 'connect.php';
     <input type="text" placeholder ="Naam" name="name" id="name"> <br>
     <input type="text" placeholder="Country" name="country" id="country"> <br>
     <input type="text" name="jaar" id="jaar"> <br>
-    <input type="submit" name="submit" value="verzenden"> <br>    
+    <input type="button" name="submit" value="verzenden"> <br>    
     </form> <br>
     <?php include 'read.php'; ?>
    <script src="db.js"></script> 

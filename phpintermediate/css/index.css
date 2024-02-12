@@ -2,3 +2,8 @@ td, th {
     border: 1px solid #999;
     padding: 0.5rem;
   }
+
+  #results{
+    color: red;
+    border: 1px solid red;
+  }
