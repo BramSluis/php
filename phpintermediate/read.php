@@ -1,4 +1,6 @@
 <?php
+include_once "connect.php";
+$conn = dbconnect();
 $query = $conn->query("SELECT * FROM artist");
 ?>
 <table> 

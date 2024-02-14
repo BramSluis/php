@@ -1,5 +1,10 @@
 <?php
-include 'connect.php';
+include_once 'connect.php';
+///
+
+
+$conn = dbconnect();
+////
 ?>
 
 
@@ -19,7 +24,7 @@ include 'connect.php';
     <input type="submit" name="submit" value="verzenden"> <br>    
     </form> <br>
     <?php include 'read.php'; ?>
-   <script src="db.js"></script> 
+ 
 
     <div id="results">
 

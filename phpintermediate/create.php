@@ -1,5 +1,6 @@
 <?php
-include 'connect.php';
+include_once 'connect.php';
+$conn = dbconnect();
 
 if(isset($_POST['submit'])){
     $name = $_POST['name'];

@@ -1,6 +1,7 @@
 <?php
 
-include ("connect.php");
+include_once ("connect.php");
+$conn = dbconnect();
 
 if(isset($_GET["id"])){
         $id = $_GET['id'];
