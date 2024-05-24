@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Information</title>
+  </head>
+  <style>
+    table, th td {
+    td{
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    th{
+      background-color: lightgray;
+    }
+    }
+  </style>
+  <body>
+    <h1>Weather Information</h1>
+    <div id="weatherInfo">
+      <table id="weatherTable">
+        <tr>
+          <th>datum tijd</th>
+          <th>temperatuur</th>
+          <th>vochtigheid</th>
+          <th>druk</th>
+          <th>bewolking</th>
+          <th>wind</th>
+        </tr>
+      </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const latitude = 52.51; // Latitude of the location
+      const longitude = 6.08; // Longitude of the location
+
+      // Make a request for weather data
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=dbe7f17dc6381416774d5be53fa279d8`
+        )
+       .then(function (response) {
+            // handle success
+            console.log(response);
+            const data = response.data;
+            const weatherTable = document.getElementById("weatherTable");
+            data.list.forEach(function (forecast) {
+                    const row = weatherTable.insertRow(-1); // Append row to the table
+                    row.insertCell(0).textContent = forecast.dt_txt; // Date and time
+                    row.insertCell(1).textContent = (forecast.main.temp-273.15).toFixed(2)+" °C"; // Temperature
+                    row.insertCell(2).textContent = forecast.main.humidity; // Humidity
+                    row.insertCell(3).textContent = forecast.main.pressure+"hPa"; // Pressure
+                    row.insertCell(4).innerHTML = "<img src='https://openweathermap.org/img/wn/"+ forecast.weather[0].icon+"@2x.png'>";   // Cloudiness
+                    row.insertCell(5).textContent = forecast.wind.speed; // Wind speed
+                });
+          
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        });
+    </script>
+  </body>
+</html>

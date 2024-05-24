@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bier API</title>
+    <style></style>
+  </head>
+  <style>
+    table,
+    th td {
+      td {
+        border: 1px solid lightgrey;
+        border-collapse: collapse;
+        padding: 8px;
+      }
+      th {
+        background-color: lightgray;
+      }
+    }
+  </style>
+  <body>
+    <table id="biertable">
+      <tr>
+        <th>naam</th>
+        <th>gisting</th>
+        <th>brouwer</th>
+        <th>percentage</th>
+      </tr>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      axios
+        .get("https://std.stegion.nl/api_bier/api.php?action=getBeers")
+        .then(function (response) {
+          let biertjes = response.data;
+          console.log(biertjes);
+          let biertable = document.getElementById("biertable");
+          biertjes.data.forEach((data) => {
+            let row = biertable.insertRow();
+            let naamcell = row.insertCell();
+            naamcell.innerHTML = data.naam;
+            let gistingcell = row.insertCell();
+            gistingcell.innerHTML = data.gisting;
+            let brouwerCell = row.insertCell();
+            brouwerCell.innerHTML = data.brouwer;
+            let percCell = row.insertCell();
+            percCell.innerHTML = Math.round([data.perc]*10000)/100 +"%";
+          });
+        });
+
+    </script>
+  </body>
+</html>

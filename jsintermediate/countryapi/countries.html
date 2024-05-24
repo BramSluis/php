@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+   <style>
+    table, th td {
+    td{
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    th{
+      background-color: lightgray;
+    }
+    }
+  </style>
+  <body>
+    <table id="countrytable">
+      <tr>
+        <th>Land</th>
+        <th>vlag</th>
+        <th>buurlanden</th>
+      </tr>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      axios.get("https://restcountries.com/v2/all").then(function (response) {
+        let landen = response.data;
+        console.log(landen);
+        let countrytable = document.getElementById("countrytable");
+        landen.forEach((country) => {
+          //maak een nieuwe row
+          let row = countrytable.insertRow();
+          // voeg een land toe
+          let namecell = row.insertCell();
+          namecell.innerHTML = country.name;
+          // voeg cell toe voor vlag 
+          let flagcell = row.insertCell();
+          let flagimg = document.createElement("img");
+          flagimg.src = country.flag;
+          flagimg.style.width ="50px";
+          flagcell.appendChild(flagimg);
+          // voeg borders toe
+          console.log(country.borders)
+          let bordercell = row.insertCell();
+          if(country.borders && country.borders.length > 0){
+            let bordercountries = country.borders.join(", ");
+            bordercell.textContent = bordercountries;
+          }
+          else{
+            bordercell.innerHTML = "None"
+          }
+          
+           
+        });
+      });
+    </script>
+  </body>
+</html>

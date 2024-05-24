@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>country2</title>
+  </head>
+   <style>
+    table, th td {
+    td{
+      border: 1px solid lightgrey;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    th{
+      background-color: lightgray;
+    }
+    }
+  </style>
+  <body>
+    <table id="countrytable">
+      <tr>
+        <th>Land</th>
+        <th>Regio</th>
+        <th>Buurlanden</th>
+        
+      </tr>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      axios.get("https://restcountries.com/v2/all").then(function (response) {
+        let landen = response.data;
+        console.log(landen);
+        let countrytable = document.getElementById("countrytable");
+        landen.forEach((country) => {
+          //maak een nieuwe row
+          let row = countrytable.insertRow();
+          // voeg een land toe
+          let namecell = row.insertCell();
+          namecell.innerHTML = country.name;
+          // voeg cell toe voor vlag 
+          let contcell = row.insertCell();
+           contcell.textContent = country.region;
+
+          
+          // voeg borders toe
+          
+          let bordercell = row.insertCell();
+          if(country.borders && country.borders.length > 0){
+            let bordercountries = country.borders;
+            bordercell.textContent = country.borders.length;
+          }
+          else{
+            bordercell.innerHTML = "0"
+          }
+          
+          let selectcell = row.insertCell();
+          if (country.borders && country.borders.length > 0) {
+            let select = document.createElement("select");
+            country.borders.forEach((bordercountry) => {
+              let option = document.createElement("option");
+              option.text = bordercountry;
+              select.add(option);
+            });
+            selectcell.appendChild(select); 
+          }
+          else{
+            selectcell.textContent = "-"
+          }
+
+
+           
+        });
+      });
+    </script>
+  </body>
+</html>
